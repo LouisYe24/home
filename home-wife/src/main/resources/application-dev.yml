@@ -1,0 +1,18 @@
+spring:
+  application:
+    # 设置当前项目的名称,这个名字会提交给Nacos做当前微服务项目的名称
+    name: nacos-wife
+  cloud:
+    nacos:
+      discovery:
+        # 配置Nacos的位置,用于提交当前项目的信息
+        server-addr: localhost:8848
+        # ephemeral: false
+dubbo:
+  protocol:
+    port: -1
+    name: dubbo
+  registry:
+    address: nacos://localhost:8848
+  consumer:
+    check: false
